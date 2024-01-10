@@ -9,10 +9,24 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddDbContext<CarBookContext>();
+
 builder.Services.AddScoped<IBrandDal, EfBrandDal>();
 builder.Services.AddScoped<IBrandService,BrandManager>();
+
 builder.Services.AddScoped<ICarStatusDal,EfCarStatusDal>();
 builder.Services.AddScoped<ICarStatusService, CarStatusManager>();
+
+//ICarDal = Generic Yapýlarý tutuyor
+//EfCarDal = GenericRepository tutuyor.
+
+// 1- Constructor olarak geçilen Insterface'lerin Program.cs sayfasýnda Registerationlarýnýn yapýlmasý :
+// 2- ICarDal, BusinessLayer Concrete CarManager içinde Constructor olarak kullanýldý.
+// 3- ICarService, Controller'da Constructor olarak kullanýldý.
+// 4- <> iþaretinin içindeki sað taraftaki ifadeler, EfCarDal ile CarManager, Ýnterfaceleri Kalýtým yolu ile alan sýnýflar
+// 5- Örnek olarak, EfCarDal  ICarDal'ý kalýtým olarak aldý.  CarManager ICarService'i  kalýtým olarak aldý.
+builder.Services.AddScoped<ICarDal, EfCarDal>();
+builder.Services.AddScoped<ICarService, CarManager>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
