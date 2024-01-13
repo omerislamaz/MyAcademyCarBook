@@ -14,7 +14,7 @@ namespace MyAcademyCarBook.PresentationLayer.Controllers
 
         public IActionResult Index()
         {
-            var values=_carService.TGetListAll();
+            var values = _carService.TGetListAll();
             return View(values);
         }
 
@@ -22,6 +22,13 @@ namespace MyAcademyCarBook.PresentationLayer.Controllers
         {
             var values = _carService.TGetAllCarsWithBrands();
             return View(values);
+        }
+
+        public IActionResult CarList()
+        {
+            var values = _carService.TGetAllCarsWithBrands();
+            return View(values); 
+
         }
     }
 }
