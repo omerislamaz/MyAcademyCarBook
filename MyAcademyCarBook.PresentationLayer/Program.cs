@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using MyAcademyCarBook.BusinessLayer.Abstract;
 using MyAcademyCarBook.BusinessLayer.Concrete;
 using MyAcademyCarBook.DataAccessLayer.Abstract;
@@ -48,7 +49,7 @@ builder.Services.AddScoped<ICommentService, CommentManager>();
 
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<CarBookContext>().AddErrorDescriber<CustomIdentityValidator>();
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddFluentValidation();
 
 var app = builder.Build();
 
