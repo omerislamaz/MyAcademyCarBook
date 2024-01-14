@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyAcademyCarBook.DataAccessLayer.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,9 @@ namespace MyAcademyCarBook.EntityLayer.Concrete
         public string Description { get; set; }
         public int CarID { get; set; }
         public Car Car { get; set; }
+        public int AppUserID { get; set; }
+        public AppUser AppUser { get; set; }
+        public DateTime CreatedDate { get; set; }
 
-     
     }
 }
