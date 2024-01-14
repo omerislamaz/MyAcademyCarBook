@@ -37,6 +37,9 @@ builder.Services.AddScoped<IServiceService, ServiceManager>();
 builder.Services.AddScoped<IHowItWorksStepDal, EfHowItWorksStepDal>();
 builder.Services.AddScoped<IHowItWorksStepService, HowItWorksStepManager>();
 
+builder.Services.AddScoped<ICarCategoryDal, EfCarCategoryDal>();
+builder.Services.AddScoped<ICarCategoryService, CarCategoryManager>();
+
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<CarBookContext>().AddErrorDescriber<CustomIdentityValidator>();
 
 builder.Services.AddControllersWithViews();
