@@ -43,6 +43,9 @@ builder.Services.AddScoped<ICarCategoryService, CarCategoryManager>();
 builder.Services.AddScoped<ICarDetailDal, EfCarDetailDal>();
 builder.Services.AddScoped<ICarDetailService, CarDetailManager>();
 
+builder.Services.AddScoped<ICommentDal, EfCommentDal>();
+builder.Services.AddScoped<ICommentService, CommentManager>();
+
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<CarBookContext>().AddErrorDescriber<CustomIdentityValidator>();
 
 builder.Services.AddControllersWithViews();

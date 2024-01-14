@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyAcademyCarBook.DataAccessLayer.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,6 @@ namespace MyAcademyCarBook.EntityLayer.Concrete
         public CarStatus CarStatus { get; set; }
         public List<Price> Prices { get; set; }
         public List<CarDetail> CarDetails { get; set; }
+        public List<Comment> Comments { get; set; }
     }
 }
